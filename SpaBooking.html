@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spa Booking Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:   #000099;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1{
+      color: #f0c1c1;
+    }
+    input, select, button {
+      display: block;
+      margin-bottom: 15px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color:  #f0c1c1;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1 >Spa Booking Form</h1>
+  <form id="bookingForm" onsubmit="submitForm(event)">
+    <input type="text" id="fullName" placeholder="Full Name" required>
+    <input type="text" id="roomNumber" placeholder="Room Number" required>
+    <input type="date" id="spaDate" placeholder="Spa Date" required>
+    <select id="spaPackage" required>
+      <option value="">Select Spa Package</option>
+      <option value="relaxation">Relaxation Package</option>
+      <option value="rejuvenation">Rejuvenation Package</option>
+      <option value="detox">Detox Package</option>
+      <!-- Add more options as needed -->
+    </select>
+    <button type="submit">Book Now</button>
+  </form>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      var fullName = document.getElementById('fullName').value;
+      var roomNumber = document.getElementById('roomNumber').value;
+      var spaDate = document.getElementById('spaDate').value;
+      var spaPackage = document.getElementById('spaPackage').value;
+      var bookingData = {
+        fullName: fullName,
+        roomNumber: roomNumber,
+        spaDate: spaDate,
+        spaPackage: spaPackage,
+      };
+      console.log(bookingData);
+    }
+  </script>
+</body>
+</html>

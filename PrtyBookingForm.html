@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Party Booking Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe925; 
+      /* background-image: url('party beach.webp'); */
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    input, select, button {
+      display: block;
+      margin-bottom: 15px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #dd355c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Party Booking Form</h1>
+  <form id="bookingForm" onsubmit="submitForm(event)">
+    <input type="text" id="fullName" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+    <input type="date" id="partyDate" placeholder="Party Date" required>
+    <select id="partyType" required>
+      <option value="">Select Party Type</option>
+      <option value="birthday">Birthday Party</option>
+      <option value="anniversary">Anniversary Party</option>
+      <option value="corporate">Corporate Event</option>
+      <!-- Add more options as needed -->
+    </select>
+    <input type="number" id="guests" placeholder="Number of Guests" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      var fullName = document.getElementById('fullName').value;
+      var email = document.getElementById('email').value;
+      var phoneNumber = document.getElementById('phoneNumber').value;
+      var partyDate = document.getElementById('partyDate').value;
+      var partyType = document.getElementById('partyType').value;
+      var guests = document.getElementById('guests').value;
+      var bookingData = {
+        fullName: fullName,
+        email: email,
+        phoneNumber: phoneNumber,
+        partyDate: partyDate,
+        partyType: partyType,
+        guests: guests,
+      };
+      console.log(bookingData);
+    }
+  </script>
+</body>
+</html>

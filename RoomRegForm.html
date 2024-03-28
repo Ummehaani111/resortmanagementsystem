@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Room Registration Form</title>
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #ffc928;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+input, textarea {
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+textarea {
+  height: 120px;
+}
+
+select#roomType {
+  font-size: 16px; /* Adjust as needed */
+  padding: 10px; /* Adjust as needed */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #020e54;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #020e54;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Room Registration Form</h1>
+  <form id="registrationForm" onsubmit="submitForm(event)">
+    <h2>Personal Information</h2>
+    <input type="text" id="fullName" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+    <!-- More input fields for address, nationality, date of birth, and gender -->
+
+    <h2>Reservation Details</h2>
+    <input type="date" id="checkInDate" required>
+    <input type="date" id="checkOutDate" required>
+    <input type="number" id="adults" placeholder="Number of Adults" required>
+    <input type="number" id="children" placeholder="Number of Children" required>
+
+    <select id="roomType" required>
+      <option value="">Select Room Type</option>
+      <option value="single">Single</option>
+      <option value="double">Double</option>
+      <option value="suite">Suite</option>
+    </select>
+
+    <!-- More input fields for room preferences -->
+
+    <h2>Payment Information</h2>
+    <input type="text" id="creditCardType" placeholder="Credit Card Type" required>
+    <input type="text" id="creditCardNumber" placeholder="Credit Card Number" required>
+    <input type="text" id="expirationDate" placeholder="Expiration Date (MM/YY)" required>
+    <input type="text" id="cvv" placeholder="CVV/CVC" required>
+
+    
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- <script src="script.js"></script> -->
+  <script>
+    function submitForm(event) {
+  event.preventDefault();
+  
+  // Get form input values
+  var fullName = document.getElementById('fullName').value;
+  var email = document.getElementById('email').value;
+  var phoneNumber = document.getElementById('phoneNumber').value;
+  var roomType = document.getElementById('roomType').value;
+  // Get other input values and validate if necessary
+  
+  // Prepare registration data object
+  var registrationData = {
+    personalInfo: {
+      fullName: fullName,
+      email: email,
+      phoneNumber: phoneNumber,
+      roomType: roomType,
+      // Add other personal info properties
+    },
+    // Include other sections of the form with their respective properties
+  };
+  
+  // Perform any necessary validation
+  
+  // Send registrationData to server or perform necessary actions
+  console.log(registrationData);
+}
+
+  </script>
+</body>
+</html>
